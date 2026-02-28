@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i(1a1q%_#_f0zl(s^ae7!)h3r0##haii_8*kuf8y%hjfwaeev!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['viano-store.onrender.com', '127.0.0.1']
 
 
 # Application definition
