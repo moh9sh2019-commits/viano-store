@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>فيانو ستور</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; text-align: center; }
+        .container { display: flex; justify-content: space-around; padding: 20px; }
+        .section { background: white; width: 45%; border-radius: 10px; padding: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .product-card { border: 1px solid #ddd; margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .price { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>مرحباً بك في فيانو ستور 🛒</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>قسم الأيدي 🎮</h2>
+            {% for product in products %}
+                {% if product.category == 'ID' %}
+                <div class="product-card">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <p class="price">{{ product.price }} ريال</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="section">
+            <h2>قسم الحزم 🎁</h2>
+            {% for product in products %}
+                {% if product.category == 'BUNDLE' %}
+                <div class="product-card">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <p class="price">{{ product.price }} ريال</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
